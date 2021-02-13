@@ -18,8 +18,11 @@ class Useful(commands.Cog):
                     [f"`{c.name}`: {c.brief} {c.description}" for c in commands]
                 )
                 helpMessage.add_field(name=f"{cog}", value=text, inline=False)
-
         await ctx.send(embed=helpMessage)
+
+    @commands.command(brief="The link to the source.")
+    async def repo(self, ctx):
+        await ctx.send("https://github.com/0xfinlay/freshbot")
 
 
 def setup(client):
