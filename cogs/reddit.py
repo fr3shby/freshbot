@@ -2,14 +2,12 @@ import discord
 from discord.ext import commands
 import asyncpraw as praw
 import random
-import json
+import os
 
-secrets = open("secret.json", "r")
-data = json.load(secrets)
-client_id = data["client_id"]
-client_secret = data["client_secret"]
-username = data["username"]
-password = data["password"]
+client_id = os.environ.get("CLIENT_ID")
+client_secret = os.environ.get("CLIENT_SECRET")
+username = os.environ.get("USERNAME")
+password = os.environ.get("PASSWORD")
 
 
 class Reddit(commands.Cog):

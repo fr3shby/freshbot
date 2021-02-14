@@ -1,13 +1,10 @@
 import discord
 from discord.ext import commands
-import json
+import os
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=".", intents=intents, help_command=None)
-
-secrets = open("secret.json", "r")
-data = json.load(secrets)
-token = data["bot_token"]
+token = os.environ.get("BOT_TOKEN")
 
 
 @client.event

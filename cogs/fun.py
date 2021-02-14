@@ -1,11 +1,9 @@
 import discord
 from discord.ext import commands
-import json
+import os
 
-secrets = open("secret.json", "r")
-data = json.load(secrets)
-hairline_image = data["hairline_image"]
-french_gaff = data["french_gaff"]
+hairline_image = os.environ.get("HAIRLINE_IMAGE")
+french_gaff = os.environ.get("FRENCH_GAFF")
 
 
 class Fun(commands.Cog):

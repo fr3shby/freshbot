@@ -2,10 +2,9 @@ import discord
 from discord.ext import commands
 import requests
 import json
+import os
 
-secrets = open("secret.json", "r")
-data = json.load(secrets)
-api_key = data["x-rapidapi-key"]
+api_key = os.environ.get("X-RAPIDAPI-KEY")
 
 
 class Sport(commands.Cog):
