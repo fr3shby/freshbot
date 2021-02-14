@@ -22,7 +22,7 @@ class Useful(commands.Cog):
 
     @commands.command(brief="The link to the source.")
     async def repo(self, ctx):
-        await ctx.send("https://github.com/0xfinlay/freshbot")
+        await ctx.send("https://github.com/fr3shby/freshbot")
 
 
 def setup(client):

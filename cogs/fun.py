@@ -4,6 +4,7 @@ import os
 
 hairline_image = os.environ.get("HAIRLINE_IMAGE")
 french_gaff = os.environ.get("FRENCH_GAFF")
+homework = os.environ.get("HOMEWORK")
 
 
 class Fun(commands.Cog):
@@ -34,6 +35,8 @@ class Fun(commands.Cog):
     async def on_message(self, message):
         if "french gaff" in message.content.lower():
             await message.channel.send(french_gaff)
+        elif "homework" in message.content.lower():
+            await message.channel.send(homework)
 
 
 def setup(client):

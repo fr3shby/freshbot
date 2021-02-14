@@ -1,6 +1,6 @@
 # Freshbot
 
-Freshbot is a Discord bot that does random things, created by [me](https://github.com/0xfinlay)!
+Freshbot is a Discord bot that does random things, created by [me](https://github.com/fr3shby)!
 
 # Info
 
