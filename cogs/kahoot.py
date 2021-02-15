@@ -13,6 +13,10 @@ class Kahoot(commands.Cog):
             bot.join(pin, name + str(i))
         await ctx.send("Bots sent")
 
+    @kahoot.error
+    async def kahoot_error(self, ctx, error):
+        await ctx.send("Command failed. Usage: '.kahoot <pin> <name>'")
+
 
 def setup(client):
     client.add_cog(Kahoot(client))
