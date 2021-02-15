@@ -4,7 +4,7 @@ import requests
 import json
 import os
 
-api_key = os.environ.get("X-RAPIDAPI-KEY")
+api_key = os.environ.get("X_RAPIDAPI_KEY")
 
 
 class Sport(commands.Cog):

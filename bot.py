@@ -34,6 +34,7 @@ async def reload(ctx, extension):
 
 client.load_extension("cogs.useful")
 client.load_extension("cogs.fun")
+client.load_extension("cogs.kahoot")
 client.load_extension("cogs.reddit")
 client.load_extension("cogs.covid")
 client.load_extension("cogs.sport")
