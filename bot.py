@@ -38,6 +38,7 @@ client.load_extension("cogs.kahoot")
 client.load_extension("cogs.reddit")
 client.load_extension("cogs.covid")
 client.load_extension("cogs.sport")
+client.load_extension("cogs.weather")
 client.load_extension("cogs.admin")
 
 client.run(token)
