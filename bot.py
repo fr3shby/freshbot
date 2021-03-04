@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
-import os
+from os import environ
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=".", intents=intents, help_command=None)
-token = os.environ.get("BOT_TOKEN")
+token = environ.get("BOT_TOKEN")
 
 
 @client.event

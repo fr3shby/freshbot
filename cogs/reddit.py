@@ -2,12 +2,12 @@ import discord
 from discord.ext import commands
 import asyncpraw as praw
 import random
-import os
+from os import environ
 
-client_id = os.environ.get("CLIENT_ID")
-client_secret = os.environ.get("CLIENT_SECRET")
-username = os.environ.get("USERNAME")
-password = os.environ.get("PASSWORD")
+client_id = environ.get("CLIENT_ID")
+client_secret = environ.get("CLIENT_SECRET")
+username = environ.get("USERNAME")
+password = environ.get("PASSWORD")
 
 
 class Reddit(commands.Cog):

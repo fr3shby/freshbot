@@ -2,9 +2,16 @@ import discord
 from discord.ext import commands
 import requests
 import json
-import os
+from os import environ
 
-api_key = os.environ.get("X_RAPIDAPI_KEY")
+api_key = environ.get("X_RAPIDAPI_KEY")
+
+
+class Team:
+    def __init__(self, rank, name, points):
+        self.rank = rank
+        self.name = name
+        self.points = points
 
 
 class Sport(commands.Cog):
@@ -20,16 +27,16 @@ class Sport(commands.Cog):
         }
         response = requests.get(url, headers=headers)
         data = json.loads(response.text)
-        table = [[0, "", 0, 0] for x in range(0, 20)]
+        table = []
 
         for i in range(0, 20):
-            table[i][0] = data["response"][0]["league"]["standings"][0][i]["rank"]
-            table[i][1] = data["response"][0]["league"]["standings"][0][i]["team"]["name"]
-            table[i][2] = data["response"][0]["league"]["standings"][0][i]["points"]
+            table.append(Team(data["response"][0]["league"]["standings"][0][i]["rank"],
+                              data["response"][0]["league"]["standings"][0][i]["team"]["name"],
+                              data["response"][0]["league"]["standings"][0][i]["points"]))
 
-        ranks = "\n".join([str(team[0]) for team in table])
-        teams = "\n".join([str(team[1]) for team in table])
-        points = "\n".join([str(team[2]) for team in table])
+        ranks = "\n".join([str(team.rank) for team in table])
+        teams = "\n".join([str(team.name) for team in table])
+        points = "\n".join([str(team.points) for team in table])
 
         message = discord.Embed(
             title="Current Premier League Table", colour=discord.Colour.green())

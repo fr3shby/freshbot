@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
-import os
+from os import environ
 
-hairline_image = os.environ.get("HAIRLINE_IMAGE")
-french_gaff = os.environ.get("FRENCH_GAFF")
-homework = os.environ.get("HOMEWORK")
+hairline_image = environ.get("HAIRLINE_IMAGE")
+french_gaff = environ.get("FRENCH_GAFF")
+homework = environ.get("HOMEWORK")
 
 
 class Fun(commands.Cog):
